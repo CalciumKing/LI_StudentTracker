@@ -1,0 +1,96 @@
+#main {
+    -fx-background-color:linear-gradient(to bottom right, black, blue);
+}
+
+#close {
+    -fx-background-color: red;
+}
+#close:hover {
+    -fx-background-color: darkred;
+}
+
+.textbox {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent lightblue transparent;
+}
+.textbox:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent blue transparent;
+}
+
+.blue {
+    -fx-background-color: blue;
+}
+.blue:hover, .item1 {
+    -fx-background-color: darkblue;
+}
+.grey:hover {
+    -fx-background-color: #4a4a4a;
+}
+
+/*.button {*/
+/*   align-items: center;*/
+/*   appearance: none;*/
+/*   background-color: #3EB2FD;*/
+/*   background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);*/
+/*   background-size: calc(100% + 20px) calc(100% + 20px);*/
+/*   border-radius: 100px;*/
+/*   border-width: 0;*/
+/*   box-shadow: none;*/
+/*   box-sizing: border-box;*/
+/*   color: #FFFFFF;*/
+/*   cursor: pointer;*/
+/*   display: inline-flex;*/
+/*   font-family: CircularStd,sans-serif;*/
+/*   font-size: 1rem;*/
+/*   height: auto;*/
+/*   justify-content: center;*/
+/*   line-height: 1.5;*/
+/*   padding: 6px 20px;*/
+/*   position: relative;*/
+/*   text-align: center;*/
+/*   text-decoration: none;*/
+/*   transition: background-color .2s,background-position .2s;*/
+/*   user-select: none;*/
+/*   -webkit-user-select: none;*/
+/*   touch-action: manipulation;*/
+/*   vertical-align: top;*/
+/*   white-space: nowrap;*/
+/*}*/
+
+/*.button-21:active,*/
+/*.button-21:focus {*/
+/*    outline: none;*/
+/*}*/
+
+/*.button-21:hover {*/
+/*    background-position: -20px -20px;*/
+/*}*/
+
+/*.button-21:focus:not(:active) {*/
+/*    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;*/
+/*}*/
+
+
+#table {
+    -fx-background-color: lightgrey;
+    -fx-background-radius: 15px
+}
+.row {
+    -fx-background-color: grey;
+    -fx-border-color: transparent;
+}
+.row:odd {
+    -fx-background-color: grey;
+}
+.row:even {
+    -fx-background-color: lightgrey;
+}
+
+/*
+    -fx-background-color: transparent;
+    -fx-background-color: linear-gradient(to bottom, black, blue);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0
+*/
