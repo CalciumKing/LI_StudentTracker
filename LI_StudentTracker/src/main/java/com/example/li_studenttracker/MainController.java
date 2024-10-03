@@ -73,12 +73,7 @@ public class MainController implements Initializable {
         }
 
         ObservableList<Student> searchResults = Results();
-        if(!ValidSearch(searchResults))
-            return;
-
-        table.setItems(searchResults);
         ValidSearch(searchResults);
-        error_lbl.setText("Error Making Search Results");
     }
 
     @FXML
@@ -127,7 +122,6 @@ public class MainController implements Initializable {
                 for (Student student : students)
                     if (student.getId() == Integer.parseInt(id_txt.getText()))
                         return false;
-
             return !name_txt.getText().isEmpty() && !id_txt.getText().isEmpty() && !grade_dropdown.getText().equals("Grade");
         } catch (Exception ignored) {
             error_lbl.setText("Please Make Sure\nAll Information\nIs Valid");
@@ -148,9 +142,12 @@ public class MainController implements Initializable {
     private ObservableList<Student> Results() {
         try {
             ObservableList<Student> search = FXCollections.observableArrayList();
-            for (Student student : students)
-                if (id_search.getText().contains("1234567890") && student.getId() == Integer.parseInt(id_search.getText()))
+            for (Student student : students) {
+                String numberString = Integer.toString(student.getId());
+                String digitString = Integer.toString(Integer.parseInt(id_search.getText()));
+                if (numberString.contains(digitString))
                     search.add(student);
+            }
             return search;
         } catch (Exception ignored) {
             error_lbl.setText("Error Making Search Results");
@@ -159,11 +156,11 @@ public class MainController implements Initializable {
     }
 
     private boolean ValidSearch(ObservableList<Student> searchResults) {
+        table.setItems(searchResults);
         if (id_search.getText().isEmpty()) {
             error_lbl.setText("Please Enter ID");
             return false;
-        }
-        if(searchResults == null) {
+        } else if (searchResults == null) {
             error_lbl.setText("Error Making Search Results");
             return false;
         }
